@@ -13,7 +13,14 @@
 </template>
 
 <script lang="ts" setup name="App">
+import request from '@/utils/request';
+import { onMounted } from 'vue';
 
+onMounted(() => {
+  request.get('/hos/hospital/1/10').then(res => {
+    console.log(res);
+  })
+})
 </script>
 
 <style scoped lang="scss">

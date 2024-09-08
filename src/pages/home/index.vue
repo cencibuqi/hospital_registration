@@ -18,7 +18,7 @@
         <!-- 分页 -->
         <div class="pagination-container">
           <el-pagination v-model:current-page="pageNo" v-model:page-size="pageSize" :page-sizes="[10, 20, 30, 40]"
-            layout="prev, pager, next, jumper, sizes, total" :total="400" background />
+            layout="prev, pager, next, jumper, ->, sizes, total" :total="13" background />
         </div>
       </el-col>
       <el-col :span="4">456</el-col>

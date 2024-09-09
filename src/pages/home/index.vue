@@ -23,7 +23,9 @@
             @current-change="currentChange" @size-change="sizeChange" />
         </div>
       </el-col>
-      <el-col :span="4">456</el-col>
+      <el-col :span="4">
+        <Tip />
+      </el-col>
     </el-row>
   </div>
 </template>
@@ -39,6 +41,8 @@ import Level from './level/index.vue';
 import Region from './region/index.vue';
 // 引入展示医院信息的卡片组件
 import Card from './card/index.vue';
+// 引入首页右侧组件
+import Tip from './tip/index.vue';
 // 分页器需要的数据
 import { ref, onMounted } from 'vue';
 import { reqHospital } from '@/api/home';

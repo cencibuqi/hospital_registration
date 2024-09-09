@@ -15,6 +15,8 @@ request.interceptors.request.use((config) => {
     // config: 请求拦截器回调注入的对象（配置对象），配置对象身上最重要的一件事情headers属性
     // 可以通过请求头携带公共参数- token
     return config;
+}, (error) => {
+    return Promise.reject(error);
 })
 
 // 响应拦截器

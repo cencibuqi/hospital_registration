@@ -1,10 +1,10 @@
 <template>
     <div>
-        <el-card class="box-card" shadow="hover">
+        <el-card class="box-card" shadow="hover" @click="goDetail">
             <div class="card-content">
                 <div class="left">
                     <div class="hospital-name">
-                        北京医院
+                        {{ hospitalInfo?.hosname }}
                     </div>
                     <div class="hospital-tip">
                         <div class="hospital-level">
@@ -20,7 +20,7 @@
                                     d="M264.827039 924.31872c0.319272 0.024559 0.441045 0.024559 0.295735-0.024559 0.243547-0.048095 0.367367-0.074701-0.295735-0.074701s-0.539282 0.026606-0.271176 0.074701C264.43409 924.343279 264.532327 924.343279 264.827039 924.31872z"
                                     fill="#5D5D5D" p-id="4301"></path>
                             </svg>
-                            <span>三级甲等</span>
+                            <span>{{ hospitalInfo?.param.hostypeString }}</span>
                         </div>
                         <div class="open-time">
                             <svg t="1725696074661" class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -38,20 +38,29 @@
                                     d="M707.2 300.8l-144 128c0 0 0 3.2-3.2 3.2-12.8-3.2-22.4-6.4-35.2-6.4-12.8 0-22.4 3.2-32 6.4 0-3.2-3.2-3.2-3.2-6.4l-92.8-83.2c-9.6-9.6-25.6-9.6-35.2 3.2-9.6 9.6-9.6 25.6 3.2 35.2l89.6 80c-16 19.2-28.8 41.6-28.8 70.4 0 54.4 44.8 102.4 102.4 102.4 54.4 0 102.4-44.8 102.4-102.4 0-25.6-9.6-48-25.6-67.2l140.8-124.8c9.6-9.6 9.6-25.6 3.2-35.2C732.8 294.4 716.8 294.4 707.2 300.8zM524.8 582.4c-28.8 0-51.2-22.4-51.2-51.2 0-28.8 22.4-51.2 51.2-51.2 28.8 0 51.2 22.4 51.2 51.2C576 556.8 553.6 582.4 524.8 582.4z"
                                     p-id="8427"></path>
                             </svg>
-                            <span>2024</span>
+                            <span>每天{{ hospitalInfo?.bookingRule.releaseTime }}放号</span>
                         </div>
                     </div>
                 </div>
                 <div class="right">
-                    <img src="../../../assets/images/logo.png" alt="">
+                    <img :src="`data:image/jpeg;base64,${hospitalInfo?.logoData}`" alt="">
                 </div>
             </div>
         </el-card>
     </div>
 </template>
 
-<script lang="ts" setup>
+<script lang="ts" setup name="Card">
+import { useRouter } from 'vue-router';
 
+let $router = useRouter();
+
+const goDetail = () => {
+    $router.push({ path: '/hospital' });
+}
+
+// 接受父组件传递的props->即为已有医院信息
+let props = defineProps(['hospitalInfo']);
 </script>
 
 <style scoped lang="scss">

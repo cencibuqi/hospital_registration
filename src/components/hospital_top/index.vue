@@ -1,7 +1,7 @@
 <template>
   <div class="top">
     <div class="content">
-      <div class="left">
+      <div class="left" @click="goHome">
         <img src="../../assets/images/logo.png" alt="logo">
         <p>尚医通 预约挂号统一平台</p>
       </div>
@@ -14,7 +14,14 @@
 </template>
 
 <script lang="ts" setup>
+import { useRouter } from 'vue-router';
 
+let $router = useRouter();
+
+// 点击返回首页
+const goHome = () => {
+  $router.push({ path: '/home' });
+}
 </script>
 
 <style scoped lang="scss">
@@ -57,7 +64,8 @@
       justify-content: center;
       font-size: 14px;
       color: #bbb;
-      .help{
+
+      .help {
         margin-right: 10px;
       }
     }

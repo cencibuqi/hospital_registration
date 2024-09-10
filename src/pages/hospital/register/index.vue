@@ -18,7 +18,7 @@
         <img :src="'data:image/jpeg;base64,' + hospitalDetail.hospitalInfo.hospital?.logoData" alt="">
       </div>
       <div class="right">
-        <div>挂号规则</div>
+        <div class="rule">挂号规则</div>
         <div class="time">
           <span class="label">预约周期：</span><span>10天</span>
           <span class="label space">放号时间：</span><span>{{ hospitalDetail.hospitalInfo.bookingRule?.releaseTime }}</span>
@@ -30,7 +30,7 @@
         <div class="route">
           <span class="label">具体路线：</span><span>{{ hospitalDetail.hospitalInfo.hospital?.route }}</span>
         </div>
-        <div class="quit-time">
+        <div class="quit-time mb-20">
           <span class="label">退号时间：</span><span>就诊前一个工作日{{ hospitalDetail.hospitalInfo.bookingRule?.quitTime
             }}前取消</span>
         </div>
@@ -46,7 +46,8 @@
 // 引入医院详情仓库数据
 import useHospitalDetailStore from '@/store/modules/hospitalDetail';
 
-let hospitalDetail = useHospitalDetailStore();
+const hospitalDetail = useHospitalDetailStore();
+
 </script>
 
 <style scoped lang="scss">
@@ -66,10 +67,8 @@ let hospitalDetail = useHospitalDetailStore();
       height: 24px;
       text-align: center;
       line-height: 24px;
-
-      svg {
-        padding-top: 2px;
-      }
+      display: flex;
+      align-items: center;
 
       span {
         margin-left: 5px;
@@ -113,8 +112,12 @@ let hospitalDetail = useHospitalDetailStore();
       }
 
       .rule {
-        margin: 20px 0;
+        margin-bottom: 15px;
       }
+
+      .mb-20{
+          margin-bottom: 20px;
+        }
     }
   }
 }

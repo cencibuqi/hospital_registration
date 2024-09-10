@@ -73,7 +73,7 @@ let $route = useRoute();
 let $router = useRouter();
 
 const changeActive = (path: string) => {
-  $router.push({ path });
+  $router.push({ path, query: { hoscode: $route.query.hoscode } });
 }
 </script>
 

@@ -56,7 +56,7 @@ import { useRouter } from 'vue-router';
 let $router = useRouter();
 
 const goDetail = () => {
-    $router.push({ path: '/hospital' });
+    $router.push({ path: '/hospital/register', query: { hoscode: props.hospitalInfo.hoscode } });
 }
 
 // 接受父组件传递的props->即为已有医院信息

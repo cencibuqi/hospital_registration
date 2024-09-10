@@ -9,10 +9,12 @@ import HospitalBottom from '@/components/hospital_bottom/index.vue';
 // 引入vue-router核心插件并安装
 import router from '@/router';
 // 引入element-plus
-import ElementPlus from 'element-plus'
-import 'element-plus/dist/index.css'
+import ElementPlus from 'element-plus';
+import 'element-plus/dist/index.css';
 // 国际化文件
-import zhCn from 'element-plus/es/locale/lang/zh-cn'
+import zhCn from 'element-plus/es/locale/lang/zh-cn';
+// 引入pinia仓库
+import pinia from '@/store/index';
 
 const app = createApp(App);
 app.component("HospitalTop", HospitalTop);
@@ -23,5 +25,7 @@ app.use(router);
 app.use(ElementPlus, {
     locale: zhCn,
 })
+// 安装pinia
+app.use(pinia);
 
 app.mount('#app');

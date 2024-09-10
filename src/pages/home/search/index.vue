@@ -13,7 +13,7 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 // 引入请求方法
 import { reqHospitalInfo } from '@/api/home';
-import { HostipalInfoResponseDataInter, ContentType, HospitalInter } from '@/api/home/type';
+import { HostipalInfoResponseDataInter } from '@/api/home/type';
 
 // 创建路由器对象
 let $router = useRouter();
@@ -25,7 +25,7 @@ const fetchHosInfo = async (keyword: string, cb: any) => {
     // 当用户输入完关键字后函数会执行一次，发送请求获取需要展示的数据
     let result: HostipalInfoResponseDataInter = await reqHospitalInfo(keyword);
     // 整理数据拼成组件需要的格式
-    let showData = result.data.map(item => {
+    let showData = result.data.map((item: any) => {
         return {
             value: item.hosname,    //展示医院的名字
             hosCode: item.hoscode   //存储医院的编码
@@ -37,7 +37,7 @@ const fetchHosInfo = async (keyword: string, cb: any) => {
 
 const goDetail = (item: any) => {
     // 点击推荐项进入详情页
-    $router.push({ path: '/hospital' });
+    $router.push({ path: '/hospital/register', query: {hoscode: item.hosCode} });
 }
 
 </script>

@@ -71,8 +71,13 @@ let props = defineProps(['hospitalInfo']);
     .left {
         width: 60%;
 
+        .hospital-name {
+            height: 42px;
+        }
+
         .hospital-tip {
-            color: #7f7f7f;
+            color: #999;
+            font-size: 14px;
             margin-top: 10px;
             display: flex;
             justify-content: space-between;
@@ -93,6 +98,7 @@ let props = defineProps(['hospitalInfo']);
         img {
             width: 50px;
             height: 50px;
+            border-radius: 50%;
         }
     }
 }

@@ -26,6 +26,7 @@ const goHome = () => {
 
 <style scoped lang="scss">
 .top {
+  letter-spacing: 1px;
   position: fixed;
   z-index: 999;
   width: 100%;
@@ -33,6 +34,7 @@ const goHome = () => {
   background-color: #fff;
   display: flex;
   justify-content: center;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
 
   .content {
     width: 1200px;
@@ -53,8 +55,9 @@ const goHome = () => {
       }
 
       p {
-        font-size: 20px;
-        color: #55a6fe;
+        font-size: 22px;
+        color: #4490F3;
+        // font-weight: bold;
       }
     }
 
@@ -63,10 +66,10 @@ const goHome = () => {
       align-items: center;
       justify-content: center;
       font-size: 14px;
-      color: #bbb;
+      color: #666;
 
       .help {
-        margin-right: 10px;
+        margin-right: 40px;
       }
     }
   }

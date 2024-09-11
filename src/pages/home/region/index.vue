@@ -44,8 +44,9 @@ const $emit = defineEmits(['getRegion']);
 
 <style scoped lang="scss">
 .hospital-region {
-    color: #7f7f7f;
+    color: #666;
     margin-top: 10px;
+    letter-spacing: 1px;
 
     .region-content {
         display: flex;
@@ -53,23 +54,29 @@ const $emit = defineEmits(['getRegion']);
         .left {
             margin-right: 10px;
             min-width: 48px;
+            margin-bottom: 20px;
+            color: #999;
+            font-size: 14px;
         }
 
         .specific-area {
             display: flex;
             flex-wrap: wrap;
+            font-size: 14px;
 
             li {
-                margin-right: 10px;
-                margin-bottom: 10px;
+                margin-right: 20px;
+                margin-bottom: 15px;
 
                 &.active {
                     color: #55a6fe;
+                    font-weight: 700;
                 }
             }
 
             li:hover {
                 color: #55a6fe;
+                font-weight: 700;
             }
         }
     }

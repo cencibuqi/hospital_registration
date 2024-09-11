@@ -2,8 +2,8 @@
   <div class="bottom">
     <div class="content">
       <div class="left">
-        <span>京ICP备13018369号</span>
-        <span>电话挂号010-56253825</span>
+        <span class="record">京ICP备13018369号</span>
+        <span class="tel">电话挂号010-56253825</span>
       </div>
       <div class="right">
         <span>联系我们</span>
@@ -23,7 +23,7 @@
 .bottom {
   width: 100%;
   height: 50px;
-  background-color: #f0f2f5;
+  background-color: #fafafa;
   display: flex;
   justify-content: center;
 
@@ -36,14 +36,23 @@
     font-size: 12px;
 
     .left {
-      span {
-        margin: 0 10px;
+      .record {
+        color: #bbb;
+      }
+
+      .tel {
+        margin-left: 42px;
+        color: #666;
       }
     }
 
     .right {
+      width: 341px;
+      display: flex;
+      justify-content: space-between;
+
       span {
-        margin: 0 5px;
+        color: #666;
       }
     }
   }

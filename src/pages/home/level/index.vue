@@ -1,6 +1,6 @@
 <template>
     <div class="hospital-level">
-        <h1>医院</h1>
+        <h1 class="title">医院</h1>
         <div class="level-content">
             <div class="left">等级：</div>
             <ul class="specific-level">
@@ -44,11 +44,13 @@ let $emit = defineEmits(['getLevel']);
 
 <style scoped lang="scss">
 .hospital-level {
-    color: #7f7f7f;
+    color: #666;
+    letter-spacing: 1px;
 
-    h1 {
-        font-weight: 900;
-        margin: 10px 0;
+    .title {
+        color: #333;
+        font-weight: 700;
+        margin-bottom: 30px;
     }
 
     .level-content {
@@ -56,22 +58,28 @@ let $emit = defineEmits(['getLevel']);
 
         .left {
             margin-right: 10px;
+            margin-bottom: 20px;
+            color: #999;
+            font-size: 14px;
         }
 
         .specific-level {
             display: flex;
+            font-size: 14px;
 
             li {
-                margin-right: 10px;
+                margin-right: 20px;
 
                 &.active {
                     color: #55a6fe;
+                    font-weight: 700;
                 }
             }
 
             li:hover {
                 color: #55a6fe;
                 cursor: pointer;
+                font-weight: 700;
             }
         }
     }

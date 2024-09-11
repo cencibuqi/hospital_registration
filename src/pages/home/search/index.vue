@@ -50,7 +50,7 @@ const goDetail = (item: any) => {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px 0;
+    margin: 50px 0;
 
     :deep(.el-autocomplete) {
         width: 600px;

@@ -102,6 +102,10 @@ const hospitalDetail = useHospitalDetailStore();
         font-size: 12px;
         margin-top: 10px;
 
+        span{
+          line-height: 20px;
+        }
+
         .label {
           color: #7f7f7f;
         }

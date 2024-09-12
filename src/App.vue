@@ -23,7 +23,7 @@
   align-items: center;
 
   .content {
-    margin-top: 70px;
+    margin-top: 75px;
     width: 1200px;
     min-height: 700px;
   }

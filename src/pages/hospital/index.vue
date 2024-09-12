@@ -80,6 +80,7 @@ const changeActive = (path: string) => {
 <style scoped lang="scss">
 .hospital-container {
   display: flex;
+  padding-top: 30px;
 
   .menu {
     flex: 2;

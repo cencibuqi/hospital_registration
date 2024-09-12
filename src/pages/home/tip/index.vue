@@ -41,14 +41,14 @@
             </div>
             <div class="content">
                 <ul>
-                    <li>神经内科</li>
-                    <li>消化内科</li>
-                    <li>呼吸内科</li>
-                    <li>内科</li>
-                    <li>神经外科</li>
-                    <li>妇科</li>
-                    <li>产科</li>
-                    <li>儿科</li>
+                    <li class="clickable">神经内科</li>
+                    <li class="clickable">消化内科</li>
+                    <li class="clickable">呼吸内科</li>
+                    <li class="clickable">内科</li>
+                    <li class="clickable">神经外科</li>
+                    <li class="clickable">妇科</li>
+                    <li class="clickable">产科</li>
+                    <li class="clickable">儿科</li>
                 </ul>
             </div>
         </div>
@@ -84,15 +84,15 @@
             </div>
             <div class="content">
                 <ul>
-                    <li>
+                    <li class="clickable">
                         <div class="point"></div>
                         <span class="desc">关于延长北京大学国际医院放假的通知</span>
                     </li>
-                    <li>
+                    <li class="clickable">
                         <div class="point"></div>
                         <span class="desc">北京中医药大学东方医院部分科室医生门诊医</span>
                     </li>
-                    <li>
+                    <li class="clickable">
                         <div class="point"></div>
                         <span class="desc">武警总医院号源暂停更新通知</span>
                     </li>
@@ -212,6 +212,14 @@
                     align-items: center;
                     margin-left: 15px;
                 }
+
+                .clickable {
+                    cursor: pointer;
+
+                    &:hover {
+                        color: #7eabff;
+                    }
+                }
             }
         }
     }
@@ -267,8 +275,8 @@
                     margin-left: 15px;
 
                     .point {
-                        width: 4px;
-                        height: 4px;
+                        min-width: 4px;
+                        min-height: 4px;
                         border-radius: 50%;
                         background: #7eabff;
                         margin: 0;
@@ -283,6 +291,11 @@
                         color: #666;
                         margin-left: 5px;
                         font-size: 14px;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: #7eabff;
+                        }
                     }
                 }
             }

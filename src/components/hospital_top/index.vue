@@ -6,8 +6,8 @@
         <p>尚医通 预约挂号统一平台</p>
       </div>
       <div class="right">
-        <p class="help">帮助中心</p>
-        <p class="login">登录/注册</p>
+        <p class="help clickable">帮助中心</p>
+        <p class="login clickable">登录/注册</p>
       </div>
     </div>
   </div>
@@ -34,7 +34,7 @@ const goHome = () => {
   background-color: #fff;
   display: flex;
   justify-content: center;
-  box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1);
 
   .content {
     width: 1200px;
@@ -47,6 +47,7 @@ const goHome = () => {
       display: flex;
       justify-content: center;
       align-items: center;
+      cursor: pointer;
 
       img {
         width: 50px;
@@ -67,6 +68,14 @@ const goHome = () => {
       justify-content: center;
       font-size: 14px;
       color: #666;
+
+      .clickable {
+        cursor: pointer;
+
+        &:hover {
+          color: #95c0f7;
+        }
+      }
 
       .help {
         margin-right: 40px;

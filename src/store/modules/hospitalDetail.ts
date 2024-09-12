@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
-import { reqHospitalDetail } from "@/api/hospital";
-import type { HospitalDetailResponseDataInter, HospitalDetailInter } from "@/api/hospital/type";
+import { reqHospitalDepartment, reqHospitalDetail } from "@/api/hospital";
+import type { HospitalDetailResponseDataInter, HospitalDetailInter, DepartmentResponseDataInter } from "@/api/hospital/type";
 import type { DetailStateInter } from "./interface";
 // import { ref } from "vue";
 
@@ -9,7 +9,8 @@ const useHospitalDetailStore = defineStore('hospitalDetail', {
     state: (): DetailStateInter => {
         return {
             // 医院详情的数据
-            hospitalInfo: ({} as HospitalDetailInter)
+            hospitalInfo: ({} as HospitalDetailInter),
+            departmentInfoArr: [],
         }
     },
     actions: {
@@ -18,6 +19,12 @@ const useHospitalDetailStore = defineStore('hospitalDetail', {
             let result: HospitalDetailResponseDataInter = await reqHospitalDetail(hoscode);
             if (result.code === 200) {
                 this.hospitalInfo = result.data;
+            }
+        },
+        async getDepartmentDetail(hoscode: string) {
+            let result: DepartmentResponseDataInter = await reqHospitalDepartment(hoscode);
+            if (result.code === 200) {
+                this.departmentInfoArr = result.data;
             }
         }
     },

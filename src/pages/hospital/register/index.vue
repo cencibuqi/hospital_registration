@@ -39,6 +39,20 @@
             class='label'>{{ `${index + 1}.${item}` }}</span></div>
       </div>
     </div>
+    <!-- 放置科室结构 -->
+    <div class="department-title">选择科室</div>
+    <div class="department-container">
+      <div class="left-nav">
+        <ul>
+          <li v-for="department in hospitalDetail.departmentInfoArr" :key="department.depcode">
+            {{ department.depname }}
+          </li>
+        </ul>
+      </div>
+      <div class="right-content">
+        456
+      </div>
+    </div>
   </div>
 </template>
 
@@ -102,7 +116,7 @@ const hospitalDetail = useHospitalDetailStore();
         font-size: 12px;
         margin-top: 10px;
 
-        span{
+        span {
           line-height: 20px;
         }
 
@@ -119,9 +133,55 @@ const hospitalDetail = useHospitalDetailStore();
         margin-bottom: 15px;
       }
 
-      .mb-20{
-          margin-bottom: 20px;
+      .mb-20 {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .department-title {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background: #fff;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: #333;
+    font-size: 16px;
+  }
+
+  .department-container {
+    width: 100%;
+    height: 500px;
+    display: flex;
+
+    .left-nav {
+      width: 170px;
+      height: 100%;
+
+      ul {
+        width: 100%;
+        height: 100%;
+        background-color: #f4f9ff;
+        display: flex;
+        flex-direction: column;
+
+        li {
+          flex: 1;
+          text-align: center;
+          color: #333;
+          font-size: 14px;
+          line-height: 40px;
+
+          &:hover {
+            background: #fff;
+          }
         }
+      }
+    }
+
+    .right-content {
+      flex: 1;
+      margin-left: 30px;
     }
   }
 }

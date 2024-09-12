@@ -67,6 +67,7 @@ let detailStore = useHospitalDetailStore();
 // 组件挂载完毕通知pinia仓库发送请求获取医院详情数据，并存储
 onMounted(() => {
   detailStore.getHospitalDetail($route.query.hoscode as string);
+  detailStore.getDepartmentDetail($route.query.hoscode as string);
 })
 
 let $route = useRoute();

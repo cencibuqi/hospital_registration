@@ -6,10 +6,10 @@
         <span class="tel">电话挂号010-56253825</span>
       </div>
       <div class="right">
-        <span>联系我们</span>
-        <span>合作伙伴</span>
-        <span>用户协议</span>
-        <span>隐私协议</span>
+        <span class="clickable">联系我们</span>
+        <span class="clickable">合作伙伴</span>
+        <span class="clickable">用户协议</span>
+        <span class="clickable">隐私协议</span>
       </div>
     </div>
   </div>
@@ -53,6 +53,14 @@
 
       span {
         color: #666;
+      }
+
+      .clickable {
+        cursor: pointer;
+
+        &:hover {
+          color: #95c0f7;
+        }
       }
     }
   }
